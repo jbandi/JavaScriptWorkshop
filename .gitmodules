@@ -1,0 +1,3 @@
+[submodule "06-FullStack/cors/javaee-backend/courserater-javaee"]
+	path = 06-FullStack/cors/javaee-backend/courserater-javaee
+	url = https://github.com/jbandi/courserater-javaee.git
