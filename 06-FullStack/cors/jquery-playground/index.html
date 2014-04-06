@@ -1,86 +1,21 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>REST Playground</title>
-        <meta charset="UTF-8">
-    </head>
-    <body>
-        <div id="logMsgDiv"></div>
- 
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-        <script type="text/javascript">
- 
-//            var restEndpointUrl = "http://courserater-jbandi.rhcloud.com/courserater/rest/ratings-cors";
-            var restEndpointUrl = "http://localhost:8080/courserater/rest/ratings-cors";
+<head>
+    <title>REST Playground</title>
+    <meta charset="UTF-8">
+</head>
+<body>
 
-            $.ajax( {
-                cache: false,
-                crossDomain: true,
-                dataType: "json",
-                url: restEndpointUrl,
-                type: "GET",
-                success: function( jsonObj, textStatus, xhr ) {
-                    var htmlContent = $( "#logMsgDiv" ).html( ) + "<p>" + JSON.stringify(jsonObj) + "</p>";
-                    $( "#logMsgDiv" ).html( htmlContent );
-                },
-                error: function( xhr, textStatus, errorThrown ) {
-                    console.log( "HTTP Status: " + xhr.status );
-                    console.log( "Error textStatus: " + textStatus );
-                    console.log( "Error thrown: " + errorThrown );
-                }
-            } );
+<input id="chkPost" type="checkbox" checked="true"/>POST
+<input id="chkPut" type="checkbox" checked="true"/>PUT
+<input id="chkDelete" type="checkbox" checked="true"/>DELETE
+<input id="execute" type="button" value="Execute!" checked="true"/>
 
-            $.ajax({
-                cache: false,
-                crossDomain: true,
-                contentType: "application/json",
-                url: restEndpointUrl,
-                type: "POST",
-                data: JSON.stringify({participantName: "2", score: 4}),
-                success: function (result, textStatus, xhr) {
-                    var htmlContent = $("#logMsgDiv").html() + "<p>" + result + "</p>";
-                    $("#logMsgDiv").html(htmlContent);
-                },
-                error: function (xhr, textStatus, errorThrown) {
-                    console.log("HTTP Status: " + xhr.status);
-                    console.log("Error textStatus: " + textStatus);
-                    console.log("Error thrown: " + errorThrown);
-                }
-            });
-
-            $.ajax( {
-                cache: false,
-                crossDomain: true,
-                contentType:"application/json",
-                url: restEndpointUrl + "/3",
-                type: "PUT",
-                data: JSON.stringify({id:3, participantName:"2", score:96}),
-                success: function( result, textStatus, xhr ) {
-                    var htmlContent = $( "#logMsgDiv" ).html( ) + "<p>" + result + "</p>";
-                    $( "#logMsgDiv" ).html( htmlContent );
-                },
-                error: function( xhr, textStatus, errorThrown ) {
-                    console.log( "HTTP Status: " + xhr.status );
-                    console.log( "Error textStatus: " + textStatus );
-                    console.log( "Error thrown: " + errorThrown );
-                }
-            } );
+<div id="logMsgDiv"></div>
  
-            $.ajax( {
-                cache: false,
-                crossDomain: true,
-                url: restEndpointUrl + "/5",
-                type: "DELETE",
-                success: function( result, textStatus, xhr ) {
-                    var htmlContent = $( "#logMsgDiv" ).html( ) + "<p>" + result + "</p>";
-                    $( "#logMsgDiv" ).html( htmlContent );
-                },
-                error: function( xhr, textStatus, errorThrown ) {
-                    console.log( "HTTP Status: " + xhr.status );
-                    console.log( "Error textStatus: " + textStatus );
-                    console.log( "Error thrown: " + errorThrown );
-                }
-            } );
-        </script>
-    </body>
+<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>-->
+<script src="js/vendor/jquery/2.1.0/jquery.min.js"></script>
+<script src="js/app/app.js"></script>
+
+</body>
 </html>
