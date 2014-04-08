@@ -1,20 +1,47 @@
-$("#execute").on('click', callRestApi)
+$(function(){
+    $("#execute").on('click', callRestApi);
 
-
-function callRestApi() {
-
-//    var restEndpointUrl = "http://courserater-jbandi.rhcloud.com/courserater/rest/ratings-cors";
-    var restEndpointUrl = "http://localhost:8080/courserater/rest/ratings-cors";
+    var restEndpointUrl = 'http://courserater-jbandi.rhcloud.com/courserater/rest/ratings-cors';
+//    var restEndpointUrl = "http://localhost:8080/courserater/rest/ratings-cors";
     var newResourceUrl;
     var allResources;
 
-    $("#logMsgDiv").empty();
+    function callRestApi() {
+
+        $("#logMsgDiv").empty();
+        newResourceUrl = undefined;
+        allResources = undefined;
+
+        callGet()
+            .done(function( jsonObj, textStatus, xhr ) {
+                allResources = jsonObj;
+                $("#logMsgDiv").append($('<p/>').text("All resources: "));
+                $("#logMsgDiv").append($('<p/>').text(JSON.stringify(jsonObj)));
+            })
+            .fail(logAjaxError)
+            .then (callPost, callPost)
+            .done(function (result, textStatus, xhr) {
+                if(xhr) newResourceUrl = xhr.getResponseHeader("Location");
+                $("#logMsgDiv").append($('<p/>').text("New resource created: " + newResourceUrl));
+            })
+            .fail(logAjaxError)
+            .then(callPut, callPut)
+            .done(function (result, textStatus, xhr) {
+                $("#logMsgDiv").append($('<p/>').text("Resource updated."));
+            })
+            .fail(logAjaxError)
+            .then(callDelete, callDelete)
+            .done(function (result, textStatus, xhr) {
+                $("#logMsgDiv").append($('<p/>').text("Resource deleted."));
+            })
+            .fail(logAjaxError);
+    };
 
     var getCurrentResourceId = function(){
         if(newResourceUrl) return newResourceUrl.split('/').pop();
         else if (allResources && allResources.length > 0) return allResources[allResources.length -1].id;
         else return undefined;
-    }
+    };
 
     var logAjaxError = function(xhr, textStatus, errorThrown){
         console.log("HTTP Status: " + xhr.status);
@@ -67,29 +94,4 @@ function callRestApi() {
             type: "DELETE"
         } );
     };
-
-    callGet()
-        .done(function( jsonObj, textStatus, xhr ) {
-            allResources = jsonObj;
-            $("#logMsgDiv").append($('<p/>').text("All resources: "));
-            $("#logMsgDiv").append($('<p/>').text(JSON.stringify(jsonObj)));
-        })
-        .fail(logAjaxError)
-        .then (callPost, callPost)
-        .done(function (result, textStatus, xhr) {
-            if(xhr) newResourceUrl = xhr.getResponseHeader("Location");
-            $("#logMsgDiv").append($('<p/>').text("New resource created: " + newResourceUrl));
-        })
-        .fail(logAjaxError)
-        .then(callPut, callPut)
-        .done(function (result, textStatus, xhr) {
-            $("#logMsgDiv").append($('<p/>').text("Resource updated."));
-        })
-        .fail(logAjaxError)
-        .then(callDelete, callDelete)
-        .done(function (result, textStatus, xhr) {
-            $("#logMsgDiv").append($('<p/>').text("Resource deleted."));
-        })
-        .fail(logAjaxError);
-
-};
+});
