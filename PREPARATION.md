@@ -36,7 +36,6 @@ The following extensions should be installed:
 - Postman Extension for Chrome: https://chrome.google.com/webstore/detail/postman-rest-client-packa/fhbjgbiflinjbdggehcddcbncdddomop?hl=en
 - JetBrains IDE Support for Chrome: https://chrome.google.com/webstore/detail/jetbrains-ide-support/hmhgeddbohgjknpmjagkdomcpobmllji
 - RESTCilent AddOn for Firefox: https://addons.mozilla.org/en-US/firefox/addon/restclient/
-- 
 
 ### WebStorm
 The WebStorm IDE from JetBrains should be installed. 
@@ -54,13 +53,31 @@ Apache Maven 3.1.1 (0728685237757ffbf44136acec0402957f723d9a; 2013-09-17 17:22:2
 ```
 
 ### JBoss App Server
-The examples use JBoss EAP 6.2. A copy can be downloaded from here: http://www.jboss.org/jbossas/downloads/
-
+The examples use JBoss EAP 6.2. A copy can be downloaded from here:  
+http://www.jboss.org/jbossas/downloads/  
+(unfortunately a registration is necessary)
+  
 <br/>
-<br/>
 
-# Preparation:
+# Preparations:
 
-Please check out the following git repository:
+To reduce the network traffic during the course the following steps should be executed before the workshop:
 
-And execute the following commands:
+Please check out the following git repository:  
+`git clone https://github.com/jbandi/JavaScriptWorkshop.git`
+
+From within the cloned repository execute the following commands:
+```
+cd 01-Intro/02-SimpisticToDo
+npm install
+...
+bower install
+...
+```
+Also from within the cloned repository execute the following commands:
+```
+cd 06-FullStack/cors/javaee-backend/courserater-javaee
+
+
+```
+
