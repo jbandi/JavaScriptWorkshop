@@ -1,5 +1,4 @@
-
-#Software:
+#Software
 For the workshop the following software should be installed:
 
 ### Git
@@ -42,7 +41,7 @@ The WebStorm IDE from JetBrains should be installed.
 There is a free 30 day trial version of WebStorm available here: http://www.jetbrains.com/webstorm/
 
 ### Java & Maven
-The Java projects are based on Java 7 and Maven 3.
+The Java projects are based on Java 7 and Maven 3.  
 Check:
 ```
 > java -version                                                                
@@ -59,7 +58,7 @@ http://www.jboss.org/jbossas/downloads/
   
 <br/>
 
-# Preparations:
+# Preparations
 
 To reduce the network traffic during the course the following steps should be executed before the workshop:
 
