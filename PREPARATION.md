@@ -64,7 +64,7 @@ http://www.jboss.org/jbossas/downloads/
 To reduce the network traffic during the course the following steps should be executed before the workshop:
 
 Please check out the following git repository:  
-`git clone https://github.com/jbandi/JavaScriptWorkshop.git`
+`git clone --recursive https://github.com/jbandi/JavaScriptWorkshop.git`
 
 From within the cloned repository execute the following commands:
 ```
@@ -77,7 +77,8 @@ bower install
 Also from within the cloned repository execute the following commands:
 ```
 cd 06-FullStack/cors/javaee-backend/courserater-javaee
-
+mvn clean package
+...
 
 ```
 
