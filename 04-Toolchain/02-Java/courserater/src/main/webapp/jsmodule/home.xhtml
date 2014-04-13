@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+
+    <ui:composition template="template.xhtml"
+                    xmlns="http://www.w3.org/1999/xhtml"
+                    xmlns:h="http://java.sun.com/jsf/html"
+                    xmlns:ui="http://java.sun.com/jsf/facelets"
+                    xmlns:f="http://java.sun.com/jsf/core">
+
+        <ui:define name="head">
+            <title>JSF and Maven integration</title>
+        </ui:define>
+
+        <ui:define name="content">
+            <div class="hero-unit">
+                <h1>Course Rater</h1>
+                <p>Demonstrating JSF and Maven integration.</p>
+            </div>
+
+            <h:form id="RatingForm" prependId="false">
+                <div class="row-fluid">
+                    <div class="span6">
+                        <p> Rate this course: Enter a rating between 1 and 5.</p>
+                        <div class="form-horizontal">
+                            <h:inputText id="moodNumber" value="#{courseRater.rating}"/>
+                            <h:commandButton id="runCode" value="Rate &#187;" action="#{courseRater.rate}" class="btn btn-primary">
+                                <f:ajax execute="@form" render="ratings"/>
+                            </h:commandButton>
+                        </div>
+                        <div id="canvas_container"></div>
+                    </div>
+                    <div class="span6">
+                        <h2>Ratings:</h2>
+                        <h:panelGroup id="ratings">
+                            <ul >
+                                <ui:repeat value="#{courseRater.ratings}" var="rating" varStatus="loop" >
+                                    <li>#{rating.rate} (#{rating.date})</li>
+                                </ui:repeat>
+                            </ul>
+                        </h:panelGroup>
+                    </div>
+                </div>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+
+</html>
+

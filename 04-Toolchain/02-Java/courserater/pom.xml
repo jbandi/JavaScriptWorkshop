@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>net.jonasbandi.jsworkshop</groupId>
+    <artifactId>courserater</artifactId>
+    <packaging>war</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <name>courserater</name>
+
+    <dependencies>
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+            <version>7.0</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+    
+    <build>
+        <finalName>courserater-jsf.war</finalName> <!-- stupid IntelliJ requires the folder to end with .war for exploded JBoss deployment -->
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.4</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>2.7</version>
+            </plugin>
+
+            <plugin>
+                <groupId>ro.isdc.wro4j</groupId>
+                <artifactId>wro4j-maven-plugin</artifactId>
+                <version>1.6.3</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>jshint</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <options>devel,noarg</options>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>com.samaxes.maven</groupId>
+                <artifactId>minify-maven-plugin</artifactId>
+                <version>1.7.1</version>
+                <executions>
+                    <execution>
+                        <id>default-minify</id>
+                        <phase>process-resources</phase>
+                        <configuration>
+                            <charset>utf-8</charset>
+                            <verbose>true</verbose>
+                            <debug>true</debug>
+                            <jsEngine>closure</jsEngine>
+                            <cssSourceDir>css</cssSourceDir>
+                            <cssSourceFiles>
+                                <!--<cssSourceFile>file-1.css</cssSourceFile>-->
+                            </cssSourceFiles>
+                            <cssFinalFile>style.css</cssFinalFile>
+                            <jsSourceDir>resources/js/app/module/</jsSourceDir>
+                            <jsSourceIncludes>
+                                <jsSourceInclude>**/*.js</jsSourceInclude>
+                            </jsSourceIncludes>
+                            <jsFinalFile>app.js</jsFinalFile>
+                        </configuration>
+                        <goals>
+                            <goal>minify</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+        </plugins>
+    </build>
+    <properties></properties>
+</project>
+

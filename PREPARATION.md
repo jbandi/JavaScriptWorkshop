@@ -62,7 +62,7 @@ http://www.jboss.org/jbossas/downloads/
 
 To reduce the network traffic during the course the following steps should be executed before the workshop:
 
-Please check out the following git repository:  
+Check out the following git repository:  
 `git clone --recursive https://github.com/jbandi/JavaScriptWorkshop.git`
 
 From within the cloned repository execute the following commands:
@@ -73,10 +73,18 @@ npm install
 bower install
 ...
 ```
+
 Also from within the cloned repository execute the following commands:
 ```
 cd 04-Toolchain/01-JavaScript
 npm install
+...
+```
+
+Also from within the cloned repository execute the following commands:
+```
+cd 04-Toolchain/02-Java
+mvn package
 ...
 ```
 
