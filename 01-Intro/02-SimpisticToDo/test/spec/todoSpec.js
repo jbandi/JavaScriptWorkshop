@@ -2,28 +2,31 @@
 describe('ToDo List', function(){
     'use strict';
 
+    var app = $('<div id=app/>');
+    $(document.body).append(app);
+    console.log('Before suite ...');
+
     beforeEach(function() {
+        console.log('Before test ...');
 
         // Set up dom for test
+        $('#app').empty();
         var input = $('<input type="text" id="input"/>');
         var addBtn = $('<a id="addBtn" class="btn btn-primary btn-large" >Add &raquo;</a>');
         var todoList = $('<p id="do"> </p>');
-        $(document.body).append(input);
-        $(document.body).append(addBtn);
-        $(document.body).append(todoList);
+        app.append(input);
+        app.append(addBtn);
+        app.append(todoList);
 
-        // Hack: Firefox does not properly register event handlers when loaded in Jasmine
-        if (navigator.userAgent.indexOf('Firefox') !== -1 ){
-            $('#addBtn').unbind('click');
-            registerButtonHandler();
-        }
+        registerButtonHandler();
     });
 
     afterEach(function() {
-        $('#do').empty();
+        //console.log($(document.body).html());
     });
 
     it('should extend list when adding item ', function() {
+        console.log('First test ...');
         var input = $('input');
         input.val('First ToDo');
 
@@ -35,12 +38,11 @@ describe('ToDo List', function(){
     });
 
 //    it('should add item when clicking button', function() {
-//
 //        var input = $('input');
 //        input.val('First ToDo');
 //
 //        var addBtn = $('#addBtn');
-//        addBtn.trigger('click');
+//        addBtn.trigger('click'); // in order for this to work the click handler has to be registered through jQuery
 //
 //        var itemCount = $('#do h3').length;
 //        expect(itemCount).toBe(1);

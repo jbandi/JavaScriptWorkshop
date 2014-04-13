@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+
+<button id="test_button">Click me</button>
+
+<script>
+
+    var button = document.getElementById("test_button");
+
+    // DOM Level 0 event handling
+    button.onclick = showTab;
+
+    // DOM Level 2 event handling
+//    if (window.attachEvent) {
+//        button.attachEvent("onclick", showTab);
+//    } else {
+//        button.addEventListener("click", showTab);
+//    }
+
+    function showTab(e)
+    {
+
+        // Most browsers pass the event as 'e'
+        // IE < 9 puts the event in window.event for DOM level 0 event handling
+        var event = e || window.event;
+
+        // Different browsers handle the `target` property differently.
+        // Target should now point to the right event.
+        var target = event.target || event.srcElement; // IE < 9: srcElement, FF: target, Chrome: both
+
+        alert(target.innerHTML);
+    }
+
+</script>
+
+</body>
+</html>

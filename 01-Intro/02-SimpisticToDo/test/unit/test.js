@@ -13,12 +13,12 @@
         $(document.body).append(input);
         $(document.body).append(addBtn);
         $(document.body).append(todoList);
-        console.log('before each')
+        console.log('before each');
     });
 
     afterEach(function() {
         $('#do').empty();
-        console.log('after each')
+        console.log('after each');
     });
 
     describe('ToDo List', function () {

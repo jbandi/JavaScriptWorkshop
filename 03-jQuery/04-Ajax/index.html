@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script data-require="jquery" data-semver="2.0.3" src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+</head>
+
+<body>
+<div>
+    <h1>Show Ajax Functionality</h1>
+    <p>
+        <script type="text/javascript">
+
+            function showpics(){
+
+                var queryTerm = $("#searchTerm").val();
+                console.log(queryTerm);
+                $.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?tags=" + queryTerm + "&tagmode=any&format=json&jsoncallback=?",
+                        function(data){ $("#images").hide().html("").fadeIn('fast');
+                            $.each(data.items, function(i,item) {
+                                $("<img/>").attr("src", item.media.m).appendTo("#images");
+                            });
+                        })
+            };
+        </script>
+    </p>
+
+    <label for="searchTerm">Search term: </label>
+    <input id="searchTerm" type="text" value="Cat">
+    <input id="Button" title="show" onclick="showpics()" type="button" value="show">
+    <div id="images"></div>
+</div>
+</body>

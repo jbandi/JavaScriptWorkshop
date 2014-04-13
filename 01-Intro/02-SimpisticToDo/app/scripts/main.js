@@ -1,19 +1,16 @@
-/* exported addText */
-$(registerButtonHandler);
+window.onload = function(){
+    'use strict';
+    console.log('Onload ...');
+    registerButtonHandler();
+};
+//registerButtonHandler();
+//document.addEventListener('DOMContentLoaded',registerButtonHandler);
 
 function registerButtonHandler(){
     'use strict';
-    // var addBtn = document.getElementById('addBtn');
-
-    // addBtn.addEventListener('click', addText);
-//
-//    if(addBtn.addEventListener){
-//        addBtn.addEventListener("click", addText);
-//    } else { // For IE < 9
-//        addBtn.attachEvent("onclick", addText);
-//    }
-
-//    $('#addBtn').on('click', addText);
+    console.log('Registering handler ...');
+    var addBtn = document.getElementById('addBtn');
+    addBtn.addEventListener('click', addText);
 }
 
 function addText(){

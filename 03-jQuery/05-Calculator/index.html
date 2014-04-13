@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Revealing Module Pattern</title>
+    <link href="styles/main.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div>
+    <div class="Calculator">
+        <div class="CalculatorHead">
+            <div id="equation" class="Equation"></div>
+            <div id="currentValue" class="CurrentNumber">0</div>
+        </div>
+        <div>
+            <div class="DigitButton">7</div>
+            <div class="DigitButton">8</div>
+            <div class="DigitButton">9</div>
+            <div class="OperatorButton">/</div>
+            <div class="ClearButton rowspan2">C</div>
+        </div>
+        <div>
+            <div class="DigitButton">4</div>
+            <div class="DigitButton">5</div>
+            <div class="DigitButton">6</div>
+            <div class="OperatorButton">*</div>
+        </div>
+        <div>
+            <div class="DigitButton">1</div>
+            <div class="DigitButton">2</div>
+            <div class="DigitButton">3</div>
+            <div class="OperatorButton">-</div>
+            <div class="Button">←</div>
+        </div>
+        <div>
+            <div class="DigitButton colspan2">0</div>
+            <div class="DigitButton">.</div>
+            <div class="OperatorButton">+</div>
+            <div class="OperatorButton">=</div>
+        </div>
+    </div>
+</div>
+<script src="src/vendor/jquery-2.1.0.min.js"></script>
+<script src="src/app/calculator.js"></script>
+<script src="src/app/main.js"></script>
+
+</body>
+</html>

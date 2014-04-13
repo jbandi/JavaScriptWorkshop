@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+
+<button id="test_button">Click me</button>
+
+<script src="jquery-1.11.0.min.js"></script>
+<script>
+
+    $(function() {
+        $('#test_button').on('click', showTab);
+    })
+
+    function showTab(e)
+    {
+        alert(e.target.innerHTML);
+    }
+
+</script>
+
+</body>
+</html>
