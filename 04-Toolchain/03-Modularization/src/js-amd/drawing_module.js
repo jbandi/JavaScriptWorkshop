@@ -1,7 +1,7 @@
-define(function(require, exports, module) {
+define(function() {
     "use strict";
 
-    var DrawingModule = module.exports = function DrawingModule(paper){
+    var DrawingModule = function DrawingModule(paper){
         this._paper = paper;
     };
 
@@ -15,5 +15,5 @@ define(function(require, exports, module) {
         }, delay);
     };
 
-
+    return DrawingModule;
 });
