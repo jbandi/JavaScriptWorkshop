@@ -75,6 +75,13 @@ bower install
 ```
 Also from within the cloned repository execute the following commands:
 ```
+cd 04-Toolchain/01-JavaScript
+npm install
+...
+```
+
+Also from within the cloned repository execute the following commands:
+```
 cd 06-FullStack/cors/javaee-backend/courserater-javaee
 mvn clean package
 ...
