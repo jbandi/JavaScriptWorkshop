@@ -1,0 +1,137 @@
+button {
+    background-color: #dedede;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 0.9em;
+    line-height: 1.8em;
+    padding: 0.3em 1em;
+    margin-bottom: 0.5em;
+    min-width: 80px;
+    width: 100%;
+}
+
+button:active {
+    opacity: 0.7;
+}
+
+.btn-primary {
+    background-color: #009933;
+    box-shadow: inset 1px 1px 8px #006600, inset -1px -1px 8px #00cc33;
+    color: wheat;
+}
+.btn-secondary {
+    background-color: #cecece;
+    box-shadow: inset 1px 1px 8px #666, inset -1px -1px 8px #fff;
+}
+
+input[type=text] {
+    display: block;
+    background-color: #6b6b6b;
+    border: 1px solid #333;
+    border-radius: 4px;
+    font-size: 1em;
+    line-height: 1.6em;
+    margin-bottom: 0.5em;
+    padding: 6px;
+    width: 100%;
+}
+textarea {
+    background-color: #6b6b6b;
+    border: 1px solid #333;
+    border-radius: 4px;
+    display: block;
+    font-family: Roboto, sans-serif;
+    font-size: 1em;
+    margin-bottom: 0.5em;
+    min-height: 8em;
+    padding: 6px;
+    resize: vertical;
+    width: 100%;
+}
+
+label[for] {
+    display: block;
+    margin-bottom: 2px;
+}
+
+.list-view {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.list-view li {
+    border-bottom: 1px solid #999;
+    font-size: 1.4em;
+    line-height: 3em;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+.list-view li:active {
+    opacity: 0.7;
+}
+.persons li .portrait {
+    display: block;
+    float: right;
+    width: 2.1em;
+    height: 2.1em;
+    border-width: 2.5px;
+    margin: 0.5em 0 0 0.8em;
+}
+.overlay {
+    display: none;
+    background-color: #fff;
+    bottom: 0;
+    left: 0;
+    opacity: 0.4;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 999;
+}
+.loading {
+    display: none;
+    margin: 4em 0 0 -130px;
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    height: 120px;
+    z-index: 1000;
+}
+.loading .circleG {
+    opacity: 0.6;
+    box-shadow: 2px 2px 16px #000;
+}
+.portrait {
+    border-radius: 50%;
+    border: 6px beige solid;
+    box-shadow: 2px 2px 8px #000;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 120px;
+    height: 120px;
+    margin-bottom: 8px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.portrait.small {
+    width: 80px;
+    height: 80px;
+    border-width: 4px;
+}
+.diego {
+    background-image: url(../img/diego.jpg);
+}
+.michele {
+    background-image: url(../img/platini.jpg);
+}
+.zico {
+    background-image: url(../img/zico.jpg);
+}
+.antonin {
+    background-image: url(../img/antonin.jpg);
+}

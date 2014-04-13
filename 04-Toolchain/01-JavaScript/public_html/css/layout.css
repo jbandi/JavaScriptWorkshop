@@ -1,0 +1,97 @@
+html, body, section, div, header, footer, nav, ul, li, button, input, textarea, h1, h2, h3, h4, h5, h6,
+img, p, a, label, span, canvas, video, table, td, th, tr, thead, tbody, i {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+;}
+
+html, body, #main {
+    height: 100%;
+    width: 100%;
+    background-color: #403f3f;
+}
+body {
+    font-size: 100%;
+    font-family: Roboto, sans-serif;
+    color: #ccc;
+    overflow: hidden;
+}
+
+section {
+    background-color: #403f3f;
+    height: 100%;
+    padding: 3em 0;
+    position: absolute;
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    -o-transform: translateX(100%);
+    transform: translateX(100%);
+    -moz-transition: -moz-transform 0.3s ease-in-out;
+    -webkit-transition: -webkit-transform 0.3s ease-in-out;
+    -ms-transition: -ms-transform 0.3s ease-in-out;
+    -o-transition: -o-transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+    width: 100%;
+}
+section.off {
+    -moz-transition: none;
+    -webkit-transition: none;
+    -ms-transition: none;
+    -o-transition: none;
+    visibility: hidden;
+    z-index: 0;
+}
+section.show {
+    -moz-transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    transform: translateX(0);
+    z-index: 100;
+}
+section.prev {
+    -moz-transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    -o-transform: translateX(-100%);
+    transform: translateX(-100%);
+    z-index: 50;
+}
+section > header {
+    background-color: #333;
+    color: whitesmoke;
+    left: 0;
+    line-height: 3em;
+    padding: 0 1em;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+section > footer {
+    background-color: #333;
+    bottom: 0;
+    color: whitesmoke;
+    height: 3em;
+    left: 0;
+    line-height: 3em;
+    padding: 0 20px;
+    position: absolute;
+    right: 0;
+    text-align: right;
+}
+section > footer > button {
+    margin-left: 0.8em;
+}
+.content-inlay {
+    padding: 20px;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+#main {
+    background-color: transparent;
+}
+

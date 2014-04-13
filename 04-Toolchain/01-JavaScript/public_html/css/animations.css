@@ -1,0 +1,311 @@
+.bump-anim {
+    -webkit-animation-duration: 0.8s;
+    -webkit-animation-name: bump;
+    -moz-animation-duration: 0.8s;
+    -moz-animation-name: bump;
+    animation-duration: 0.8s;
+    animation-name: bump;
+}
+.rotate-anim {
+    -webkit-animation-duration: 0.8s;
+    -webkit-animation-name: rotate;
+    -moz-animation-duration: 0.8s;
+    -moz-animation-name: rotate;
+    animation-duration: 0.8s;
+    animation-name: rotate;
+}
+.slidein-anim {
+    -webkit-animation-duration: 0.8s;
+    -webkit-animation-name: slidein;
+    -moz-animation-duration: 0.8s;
+    -moz-animation-name: slidein;
+    animation-duration: 0.8s;
+    animation-name: slidein;
+}
+.fade-anim {
+    -webkit-animation-duration: 0.8s;
+    -webkit-animation-name: fade;
+    -moz-animation-duration: 0.8s;
+    -moz-animation-name: fade;
+    animation-duration: 0.8s;
+    animation-name: fade;
+}
+
+@keyframes bump {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@-webkit-keyframes bump {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fade {
+  
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-moz-keyframes fade {
+  
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slidein {
+  0% {
+    transform: translateX(0);
+  }
+  16.5% {
+    transform: translateX(20%);
+  }
+  33% {
+    transform: translateX(-20%);
+  }
+  50% {
+    transform: translateX(20%);
+  }
+  66% {
+    transform: translateX(-20%);
+  }
+  83.5% {
+    transform: translateX(20%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@-webkit-keyframes slidein {
+  0% {
+    -webkit-transform: translateX(0);
+  }
+  16.5% {
+    -webkit-transform: translateX(20%);
+  }
+  33% {
+    -webkit-transform: translateX(-20%);
+  }
+  50% {
+    -webkit-transform: translateX(20%);
+  }
+  66% {
+    -webkit-transform: translateX(-20%);
+  }
+  83.5% {
+    -webkit-transform: translateX(20%);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-moz-keyframes rotate {
+  0% {
+    -moz-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -moz-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+#circleG{
+    width: 100%;
+}
+
+.circleG{
+    background-color:#FFFFFF;
+    float:left;
+    height:64px;
+    margin-left:17px;
+    width:64px;
+    -moz-animation-name:bounce_circleG;
+    -moz-animation-duration:1.9500000000000002s;
+    -moz-animation-iteration-count:infinite;
+    -moz-animation-direction:linear;
+    -moz-border-radius:21px;
+    -webkit-animation-name:bounce_circleG;
+    -webkit-animation-duration:1.9500000000000002s;
+    -webkit-animation-iteration-count:infinite;
+    -webkit-animation-direction:linear;
+    -webkit-border-radius:50%;
+    -ms-animation-name:bounce_circleG;
+    -ms-animation-duration:1.9500000000000002s;
+    -ms-animation-iteration-count:infinite;
+    -ms-animation-direction:linear;
+    -ms-border-radius:50%;
+    -o-animation-name:bounce_circleG;
+    -o-animation-duration:1.9500000000000002s;
+    -o-animation-iteration-count:infinite;
+    -o-animation-direction:linear;
+    -o-border-radius:50%;
+    animation-name:bounce_circleG;
+    animation-duration:1.9500000000000002s;
+    animation-iteration-count:infinite;
+    animation-direction:linear;
+    border-radius:50%;
+}
+
+#circleG_1 {
+    -moz-animation-delay:0.39s;
+    -webkit-animation-delay:0.39s;
+    -ms-animation-delay:0.39s;
+    -o-animation-delay:0.39s;
+    animation-delay:0.39s;
+}
+
+#circleG_2 {
+    -moz-animation-delay:0.9099999999999999s;
+    -webkit-animation-delay:0.9099999999999999s;
+    -ms-animation-delay:0.9099999999999999s;
+    -o-animation-delay:0.9099999999999999s;
+    animation-delay:0.9099999999999999s;
+}
+
+#circleG_3 {
+    -moz-animation-delay:1.1700000000000002s;
+    -webkit-animation-delay:1.1700000000000002s;
+    -ms-animation-delay:1.1700000000000002s;
+    -o-animation-delay:1.1700000000000002s;
+    animation-delay:1.1700000000000002s;
+}
+
+@-moz-keyframes bounce_circleG{
+0%{
+}
+
+50%{
+background-color:#000000}
+
+100%{
+}
+
+}
+
+@-webkit-keyframes bounce_circleG{
+0%{
+}
+
+50%{
+background-color:#000000}
+
+100%{
+}
+
+}
+
+@-ms-keyframes bounce_circleG{
+0%{
+}
+
+50%{
+background-color:#000000}
+
+100%{
+}
+
+}
+
+@-o-keyframes bounce_circleG{
+0%{
+}
+
+50%{
+background-color:#000000}
+
+100%{
+}
+
+}
+
+@keyframes bounce_circleG{
+0%{
+}
+
+50%{
+background-color:#000000}
+
+100%{
+}
+
+} 

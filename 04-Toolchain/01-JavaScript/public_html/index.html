@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tools Concat</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="apple-mobile-web-app-capable" content="yes"/>
+        <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+        <meta name="format-detection" content="telephone=no"/>
+        <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'/>
+        <link type="text/css" rel="stylesheet" href="css/jquery-app-styles.css" />
+        <style type="text/css">
+            #team-view .portrait {
+            }
+            .cell {
+                float: left;
+                width: 33.333333%;
+                margin-bottom: 1em;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="main">
+            <section id="list-view" class="show">
+                <header>Transfermarkt</header>
+                <ul class="list-view persons content-inlay">
+                    <li data-nav="detail-view" data-value="diego">
+                        <i class="portrait diego small"></i>
+                        <label>Diego Maradona</label>
+                    </li>
+                    <li data-nav="detail-view" data-value="michele">
+                        <i class="portrait michele small"></i>
+                        <label>Michel Platini</label>
+                    </li>
+                    <li data-nav="detail-view" data-value="zico">
+                        <i class="portrait zico small"></i>
+                        <label>Zico</label>
+                    </li>
+                    <li data-nav="detail-view" data-value="antonin">
+                        <i class="portrait antonin small"></i>
+                        <label>Antonin Panenka</label>
+                    </li>
+                </ul>
+                <footer>
+                </footer>
+            </section>
+            
+            <section id="detail-view">
+                <header id="name-caption"></header>
+                <div class="content-inlay">
+                    <div class="portrait" data-anim="rotate-anim"></div> 
+                    <label for="name">Name</label>
+                    <input type="text" id="name"/>
+                    <label for="email">E-Mailadresse</label>
+                    <input type="text" id="email"/>
+                    <button data-nav="team-view" class="btn-primary">OK</button> 
+                </div>
+                <footer>
+                </footer>
+            </section>
+            <section id="team-view">
+                <header>Dein Team</header>
+                    <div class="content-inlay">
+						<div class="cell">
+	                        <img class="portrait small diego" data-anim="rotate-anim"/> 
+	                    </div>
+	                    <div class="cell">
+	                        <img class="portrait small antonin" data-anim="slidein-anim"/> 
+	                    </div>
+	                    <div class="cell">
+	                        <img class="portrait small michele" data-anim="fade-anim"/>
+	                    </div>
+	                    <div class="cell">
+	                        <img class="portrait small zico" data-anim="bump-anim"/>
+	                    </div>
+	                    <div class="cell">
+	                        <img class="portrait small diego" data-anim="rotate-anim"/> 
+	                    </div>
+	                    <div class="cell">
+	                        <img class="portrait small antonin" data-anim="slidein-anim"/> 
+	                    </div>
+	                    <div class="cell">
+	                        <img class="portrait small michele" data-anim="fade-anim"/>
+	                    </div>
+	                    <button data-nav="list-view" class="btn-primary">Speichern</button> 
+	                </div>
+                <footer>
+                </footer>
+            </section>
+        </div>
+        <div id="overlay" class="overlay"></div>
+        <div id="spinner" class="loading">
+            <div id="circleG">
+                <div id="circleG_1" class="circleG"></div>
+                <div id="circleG_2" class="circleG"></div>
+                <div id="circleG_3" class="circleG"></div>
+            </div>
+        </div>
+        <script src="js/libs/jquery-1.9.0/jquery.min.js"> </script>
+        <script src="js/main.min.js"> </script>
+    </body>
+</html>
