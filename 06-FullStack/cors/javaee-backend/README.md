@@ -9,4 +9,4 @@ If the initial checkout was not done with `--recursive` then you can get the sub
 
 Updating to the latest version of the submodule is done via (always push the submodule first if you have changes!):  
 `git submodule update --remote --merge`  
-`git submodule add <submodule>`
+`git push`
