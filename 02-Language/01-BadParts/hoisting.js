@@ -1,8 +1,7 @@
 iterate = function(n) {
-    var i;
 	for (var i = 0; i < n; i += 1) {
 		console.log("Hello!");
-		for (var i = n; i > 0; i -= 1) {
+		for (var i = 0; i < n; i += 1) {
 			console.log("I am iterating ...");
 		}
 	}

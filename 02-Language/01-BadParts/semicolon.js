@@ -1,7 +1,6 @@
 
 firstFunction = function() {
-	return
-    {
+	return {
 		event: "DNUG Bern"
 	};
 }
