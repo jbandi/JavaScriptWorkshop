@@ -83,7 +83,7 @@ npm install
 
 Also from within the cloned repository execute the following commands:
 ```
-cd 04-Toolchain/02-Java
+cd 04-Toolchain/02-Java/courserater
 mvn package
 ...
 ```
