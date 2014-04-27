@@ -1,3 +1,7 @@
+#Important
+Make sure that you have unrestricted access to the internet! In the steps below you will have to access GitHub and npmjs.org. Some corporate proxies block these sites or access over https/git!
+
+<br/>
 #Software
 For the workshop the following software should be installed:
 
