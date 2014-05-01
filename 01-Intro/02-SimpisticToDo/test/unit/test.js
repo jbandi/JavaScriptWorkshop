@@ -7,21 +7,30 @@
     beforeEach(function(){
 
         // Set up dom for test
+        var app = $('<div id="app"/>');
         var input = $('<input type="text" id="input"/>');
         var addBtn = $('<a id="addBtn" class="btn btn-primary btn-large" >Add &raquo;</a>');
         var todoList = $('<p id="do"> </p>');
-        $(document.body).append(input);
-        $(document.body).append(addBtn);
-        $(document.body).append(todoList);
+        app.append(input);
+        app.append(addBtn);
+        app.append(todoList);
+        $(document.body).append(app);
+//        $(document.body).append(addBtn);
+//        $(document.body).append(todoList);
         console.log('before each');
     });
 
     afterEach(function() {
+        $('#app').remove();
         $('#do').empty();
         console.log('after each');
     });
 
     describe('ToDo List', function () {
+        it('should extend list when adding item', function () {
+            expect(true).to.equal(true);
+        });
+
         it('should extend list when adding item', function () {
 
             var todoList1 = $('#do h3');
