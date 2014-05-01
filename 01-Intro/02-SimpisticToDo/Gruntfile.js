@@ -14,32 +14,28 @@ module.exports = function (grunt) {
     require('load-grunt-tasks')(grunt);
 
     grunt.initConfig({
-        yeoman: {
+        simpl_todo: {
             app: 'app',
             dist: 'dist'
         },
         watch: {
             src: {
-                files: ['Gruntfile.js', '<%= yeoman.app %>/scripts/{,*/}*.js', 'test/spec/{,*/}*.js', 'test/unit/{,*/}*.js', 'test/index.html' ],
+                files: ['Gruntfile.js', '<%= simpl_todo.app %>/scripts/**/*.js', 'test/spec/**/*.js', 'test/unit/**/*.js', 'test/index.html' ],
                 tasks: ['jshint', 'test']
             },
-            compass: {
-                files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
-                tasks: ['compass:server', 'autoprefixer']
-            },
             styles: {
-                files: ['<%= yeoman.app %>/styles/{,*/}*.css'],
-                tasks: ['copy:styles', 'autoprefixer']
+                files: ['<%= simpl_todo.app %>/styles/**/*.css'],
+                tasks: ['copy:styles']
             },
             livereload: {
                 options: {
                     livereload: '<%= connect.options.livereload %>'
                 },
                 files: [
-                    '<%= yeoman.app %>/*.html',
-                    '.tmp/styles/{,*/}*.css',
-                    '{.tmp,<%= yeoman.app %>}/scripts/{,*/}*.js',
-                    '<%= yeoman.app %>/images/{,*/}*.{gif,jpeg,jpg,png,svg,webp}'
+                    '<%= simpl_todo.app %>/*.html',
+                    '.tmp/styles/**/*.css',
+                    '{.tmp,<%= simpl_todo.app %>}/scripts/**/*.js',
+                    '<%= simpl_todo.app %>/images/**/*.{gif,jpeg,jpg,png,svg,webp}'
                 ]
             }
         },
@@ -55,7 +51,7 @@ module.exports = function (grunt) {
                     open: true,
                     base: [
                         '.tmp',
-                        '<%= yeoman.app %>'
+                        '<%= simpl_todo.app %>'
                     ]
                 }
             },
@@ -64,31 +60,19 @@ module.exports = function (grunt) {
                     base: [
                         '.tmp',
                         'test',
-                        '<%= yeoman.app %>'
+                        '<%= simpl_todo.app %>'
                     ]
                 }
             },
             dist: {
                 options: {
                     open: true,
-                    base: '<%= yeoman.dist %>',
+                    base: '<%= simpl_todo.dist %>',
                     livereload: false
                 }
             }
         },
-        clean: {
-            dist: {
-                files: [{
-                    dot: true,
-                    src: [
-                        '.tmp',
-                        '<%= yeoman.dist %>/*',
-                        '!<%= yeoman.dist %>/.git*'
-                    ]
-                }]
-            },
-            server: '.tmp'
-        },
+        clean: ['<%= simpl_todo.dist %>', '.tmp'],
         jshint: {
             options: {
                 jshintrc: '.jshintrc',
@@ -96,18 +80,18 @@ module.exports = function (grunt) {
             },
             all: [
                 'Gruntfile.js',
-                '<%= yeoman.app %>/scripts/{,*/}*.js',
-                '!<%= yeoman.app %>/scripts/vendor/*',
-                'test/unit/{,*/}*.js',
-                'test/spec/{,*/}*.js'
+                '<%= simpl_todo.app %>/scripts/{,*/}*.js',
+                '!<%= simpl_todo.app %>/scripts/vendor/*',
+                'test/unit/**/*.js',
+                '!test/unit/lib/**/*.js',
+                'test/spec/**/*.js'
             ]
         },
         mocha: {
             all: {
-                //src:['test/index.html'],
+                src:['test/unit/index.html'],
                 options: {
-                    urls: ['http://<%= connect.test.options.hostname %>:<%= connect.test.options.port %>/index.html'],
-                    run: true, 
+                    run: true,
                     log: true
                 }
             }
@@ -118,82 +102,43 @@ module.exports = function (grunt) {
                 autoWatch: true
             }
         },
-        autoprefixer: {
-            options: {
-                browsers: ['last 1 version']
-            },
-            dist: {
-                files: [{
-                    expand: true,
-                    cwd: '.tmp/styles/',
-                    src: '{,*/}*.css',
-                    dest: '.tmp/styles/'
-                }]
-            }
-        },
-        // not used since Uglify task does concat,
-        // but still available if needed
-        /*concat: {
-            dist: {}
-        },*/
-        // not enabled since usemin task does concat and uglify
-        // check index.html to edit your build targets
-        // enable this task if you prefer defining your build targets here
-        /*uglify: {
-            dist: {}
-        },*/
+
         'bower-install': {
             app: {
-                html: '<%= yeoman.app %>/index.html',
-                ignorePath: '<%= yeoman.app %>/'
+                html: '<%= simpl_todo.app %>/index.html',
+                ignorePath: '<%= simpl_todo.app %>/'
             }
         },
         rev: {
             dist: {
                 files: {
                     src: [
-                        '<%= yeoman.dist %>/scripts/{,*/}*.js',
-                        '<%= yeoman.dist %>/styles/{,*/}*.css',
-                        '<%= yeoman.dist %>/images/{,*/}*.{gif,jpeg,jpg,png,webp}',
-                        '<%= yeoman.dist %>/styles/fonts/{,*/}*.*'
+                        '<%= simpl_todo.dist %>/scripts/{,*/}*.js',
+                        '<%= simpl_todo.dist %>/styles/{,*/}*.css',
+                        '<%= simpl_todo.dist %>/images/{,*/}*.{gif,jpeg,jpg,png,webp}',
+                        '<%= simpl_todo.dist %>/styles/fonts/{,*/}*.*'
                     ]
                 }
             }
         },
         useminPrepare: {
             options: {
-                dest: '<%= yeoman.dist %>'
+                dest: '<%= simpl_todo.dist %>'
             },
-            html: '<%= yeoman.app %>/index.html'
+            html: '<%= simpl_todo.app %>/index.html'
         },
         usemin: {
             options: {
-                assetsDirs: ['<%= yeoman.dist %>']
+                assetsDirs: ['<%= simpl_todo.dist %>']
             },
-            html: ['<%= yeoman.dist %>/{,*/}*.html'],
-            css: ['<%= yeoman.dist %>/styles/{,*/}*.css']
-        },
-        cssmin: {
-            // This task is pre-configured if you do not wish to use Usemin
-            // blocks for your CSS. By default, the Usemin block from your
-            // `index.html` will take care of minification, e.g.
-            //
-            //     <!-- build:css({.tmp,app}) styles/main.css -->
-            //
-            // dist: {
-            //     files: {
-            //         '<%= yeoman.dist %>/styles/main.css': [
-            //             '.tmp/styles/{,*/}*.css',
-            //             '<%= yeoman.app %>/styles/{,*/}*.css'
-            //         ]
-            //     }
-            // }
+            html: ['<%= simpl_todo.dist %>/{,*/}*.html'],
+            css: ['<%= simpl_todo.dist %>/styles/{,*/}*.css']
         },
         htmlmin: {
             dist: {
                 options: {
                     /*removeCommentsFromCDATA: true,
-                    // https://github.com/yeoman/grunt-usemin/issues/44
+                    // https://github.com/simpl_todo/grunt-usemin/issues/44
                     //collapseWhitespace: true,
                     collapseBooleanAttributes: true,
                     removeAttributeQuotes: true,
@@ -204,9 +149,9 @@ module.exports = function (grunt) {
                 },
                 files: [{
                     expand: true,
-                    cwd: '<%= yeoman.app %>',
+                    cwd: '<%= simpl_todo.app %>',
                     src: '*.html',
-                    dest: '<%= yeoman.dist %>'
+                    dest: '<%= simpl_todo.dist %>'
                 }]
             }
         },
@@ -216,8 +161,8 @@ module.exports = function (grunt) {
                 files: [{
                     expand: true,
                     dot: true,
-                    cwd: '<%= yeoman.app %>',
-                    dest: '<%= yeoman.dist %>',
+                    cwd: '<%= simpl_todo.app %>',
+                    dest: '<%= simpl_todo.dist %>',
                     src: [
                         '*.{ico,png,txt}',
                         '.htaccess',
@@ -229,25 +174,13 @@ module.exports = function (grunt) {
             styles: {
                 expand: true,
                 dot: true,
-                cwd: '<%= yeoman.app %>',
+                cwd: '<%= simpl_todo.app %>',
                 dest: '.tmp/',
                 src: [
                     'styles/{,*/}*.css',
                     'bower_components/**/*.css'
                 ]
             }
-        },
-        concurrent: {
-            server: [
-                'copy:styles'
-            ],
-            test: [
-                'copy:styles'
-            ],
-            dist: [
-                'copy:styles',
-                'htmlmin'
-            ]
         }
     });
 
@@ -256,39 +189,10 @@ module.exports = function (grunt) {
             return grunt.task.run(['build', 'connect:dist:keepalive']);
         }
 
-        grunt.task.run([
-            'clean:server',
-            'concurrent:server',
-            'autoprefixer',
-            'connect:livereload',
-            'watch'
-        ]);
+        grunt.task.run(['clean', 'copy:styles', 'connect:livereload', 'watch']);
     });
 
-    grunt.registerTask('test', [
-        'clean:server',
-        'concurrent:test',
-        'autoprefixer',
-        'connect:test',
-        'mocha'
-    ]);
-
-    grunt.registerTask('build', [
-        'clean:dist',
-        'useminPrepare',
-        'concurrent:dist',
-        'autoprefixer',
-        'concat',
-        'cssmin',
-        'uglify',
-        'copy:dist',
-        'rev',
-        'usemin'
-    ]);
-
-    grunt.registerTask('default', [
-        'jshint',
-        'test',
-        'build'
-    ]);
+    grunt.registerTask('test', ['clean', 'copy:styles', 'connect:test', 'mocha']);
+    grunt.registerTask('build', ['clean', 'useminPrepare', 'copy:styles', 'htmlmin', 'concat', 'cssmin', 'uglify', 'copy:dist', 'rev', 'usemin']);
+    grunt.registerTask('default', [ 'jshint', 'test', 'build']);
 };
