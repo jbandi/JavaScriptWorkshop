@@ -62,8 +62,8 @@ lesson("Bad Parts", function() {
             };
         }
 
-        expect(firstFunction()).toBe(FILL_ME_IN);
         expect(secondFunction()).toBe(FILL_ME_IN);
+        expect(firstFunction()).not.toBe(FILL_ME_IN);
     });
 
     learn("about the quirks of variable hoisting", function (){

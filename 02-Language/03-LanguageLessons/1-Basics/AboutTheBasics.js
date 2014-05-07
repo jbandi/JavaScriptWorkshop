@@ -66,7 +66,7 @@ lesson("About Equality", function() {
         expect(e === s).toBeTruthy();
     });
 
-    learn("about equality without type coercion", function(){
+    learn("about equality with type coercion", function(){
         var e = 3;
         var s = 'FILL_ME_IN'; // use a string!
         expect(e == s).toBeTruthy();
@@ -152,7 +152,7 @@ lesson ("about strict mode", function(){
 
         function isStrictMode(){
             "use strict";
-            return !this; // in strict mode, the keyword 'this' does not refer to global object, unlike traditional JS. So here,'this' is null.
+            return !this; // in strict mode, the keyword 'this' does not refer to global object, unlike traditional JS. So here,'this' is undefined.
         }
 
         expect(isNotStrictMode()).toBe(FILL_ME_IN);
