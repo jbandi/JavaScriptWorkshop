@@ -83,5 +83,5 @@
     "white"         : false,    // true: Check against strict whitespace and indentation rules
 
     // Custom Globals
-    "predef"       : {}        // additional predefined global variables
+    "predef"       : ["console"]        // additional predefined global variables
 }

@@ -33,7 +33,7 @@ describe('ToDo List', function(){
         addText();
 
         var todoList = $('#do h3');
-        expect(todoList.length).toBe(1);
+        expect(todoList.length).toBe(2);
         expect(todoList.eq(0).text()).toBe('First ToDo');
     });
 
