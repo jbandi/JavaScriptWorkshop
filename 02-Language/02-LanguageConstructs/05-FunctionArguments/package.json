@@ -1,0 +1,16 @@
+{
+  "name": "04-FunctionArguments",
+  "version": "0.0.0",
+  "description": "",
+  "main": "arguments.js",
+  "dependencies": {
+    "jsdom": "~0.10.5",
+    "jquery": "~2.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

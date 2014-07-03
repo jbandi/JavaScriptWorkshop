@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<script>
+    console.log("Hello from first script: " + new Date());
+    document.body.innerHTML = "Hello from first script: " + new Date();
+</script>
+<script>
+    function fibonacci(n) {
+        if (n < 2)
+            return 1;
+        else
+            return fibonacci(n-2) + fibonacci(n-1);
+    }
+
+    var res;
+
+    for (var i = 30; i < 42; i++){
+        var start = new Date();
+        res = fibonacci(i);
+        var end = new Date();
+        console.log("Input: " + i + " Result: " + res + ", Time: " + (end - start));
+        document.body.innerHTML = "Hello from second script: " + new Date();
+    }
+
+</script>
+ Hello World!
+</body>
+</html>

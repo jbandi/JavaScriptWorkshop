@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+
+<script>
+    function foo(){
+        return bar();
+    }
+    var bar = (function(){
+        if (window.addEventListener) {
+            return function bar1(){
+                return baz();
+            };
+        }
+        else if (window.attachEvent) {
+            return function bar2() {
+                return baz();
+            };
+        }
+    })();
+    function baz(){
+        debugger;
+    }
+    foo();
+
+</script>
+
+</body>
+</html>
