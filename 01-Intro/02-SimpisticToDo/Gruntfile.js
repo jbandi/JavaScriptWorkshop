@@ -21,7 +21,8 @@ module.exports = function (grunt) {
         watch: {
             src: {
                 files: ['Gruntfile.js', '<%= simpl_todo.app %>/scripts/**/*.js', 'test/spec/**/*.js', 'test/unit/**/*.js', 'test/index.html' ],
-                tasks: ['jshint', 'test', 'notify:watch']
+                tasks: ['jshint', 'test']
+//                tasks: ['jshint', 'test', 'notify:watch']
             },
             styles: {
                 files: ['<%= simpl_todo.app %>/styles/**/*.css'],
@@ -181,26 +182,26 @@ module.exports = function (grunt) {
                     'bower_components/**/*.css'
                 ]
             }
-        },
-
-        notify: {
-            karma: {
-                options: {
-                    message: 'Done' //required
-                }
-            },
-            watch: {
-                options: {
-                    title: 'Task Complete',  // optional
-                    message: 'Done' //required
-                }
-            },
-            server: {
-                options: {
-                    message: 'Server is ready!'
-                }
-            }
         }
+
+//        notify: {
+//            karma: {
+//                options: {
+//                    message: 'Done' //required
+//                }
+//            },
+//            watch: {
+//                options: {
+//                    title: 'Task Complete',  // optional
+//                    message: 'Done' //required
+//                }
+//            },
+//            server: {
+//                options: {
+//                    message: 'Server is ready!'
+//                }
+//            }
+//        }
 
     });
 
