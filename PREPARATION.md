@@ -3,14 +3,14 @@ Make sure that you have unrestricted access to the internet! In the steps below 
 
 <br/>
 #Software
-For the workshop the following software should be installed:
+For the workshop the following software should be installed (the version numbers don't have to match exactly, but should be pretty close):
 
 ### Git
 A recent git installation is needed to download the exercise files.  
 Check:  
 ```
 > git --version                                                             
-git version 1.8.5.5
+git version 2.0.1
 ```
 
 
@@ -21,9 +21,9 @@ The Node installer can be downloaded here: http://nodejs.org/download/
 Check:
 ```
 > node --version
-v0.10.25
+v0.10.29
 > npm --version
-1.3.24
+1.4.9
 ```
 
 The following npm packages should be installed globally:
