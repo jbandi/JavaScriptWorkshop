@@ -19,5 +19,5 @@ var calcModule = (function(){
     }
 })();
 
-console.log(calcModule.calculate());
+console.log(calcModule.add());
 console.log(calcModule.subtract());

@@ -1,7 +1,7 @@
 
 firstFunction = function() {
 	return {
-		event: "DNUG Bern"
+		event: "JavaScript Workshop!"
 	};
 }
 console.log(firstFunction())
