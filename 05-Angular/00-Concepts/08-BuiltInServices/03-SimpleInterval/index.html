@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Angular Example</title>
+
+    <link rel="stylesheet" href="css/app.css"/>
+
+</head>
+<body id="app" ng-app="myApp" ng-controller="MyCtrl">
+
+<p>Seconds until data is fetched: {{countdown}}</p>
+<button ng-click="getData()">Get data now!</button>
+<p>{{data}}</p>
+
+<script src="lib/angular.min.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

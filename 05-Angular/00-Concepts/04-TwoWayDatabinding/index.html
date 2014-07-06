@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Angular Example</title>
+
+    <link rel="stylesheet" href="css/app.css"/>
+
+</head>
+<body ng-app="myApp" ng-controller="MyCtrl" ng-cloak>
+
+    <div>Quantity: <input type="text" ng-model="item.quantity"/></div>
+    <div>Price: <input type="text" ng-model="item.price"/></div>
+    <div>Total Amount: {{item.getAmount()}}</div>
+
+    <br/>
+    <button ng-click="reset()">Reset</button>
+
+    <script src="lib/angular.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
