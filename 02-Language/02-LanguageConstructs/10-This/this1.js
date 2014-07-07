@@ -16,5 +16,6 @@ var object2 = {
 
 assert.equal(object1.get(), 42);
 assert.equal(object2.get(), 3.14159);
+assert.equal(myMethod(), undefined);
 
 console.log(myMethod());

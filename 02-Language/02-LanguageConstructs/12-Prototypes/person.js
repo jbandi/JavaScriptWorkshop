@@ -19,7 +19,7 @@ console.log(pers.fullNameReversed());
 
 // Understanding prototypes
 console.log("Object has property 'first': " + pers.hasOwnProperty("first"));
-console.log("Object has property 'last': " + pers.hasOwnProperty("first"));
+console.log("Object has property 'last': " + pers.hasOwnProperty("last"));
 console.log("Object has property 'fullName': " + pers.hasOwnProperty("fullName"));
 console.log("Constructor prototype has property 'fullName': " + Person.prototype.hasOwnProperty("fullName"));
 console.log("Object prototype has property 'fullName': " + pers.__proto__.hasOwnProperty("fullName"));
