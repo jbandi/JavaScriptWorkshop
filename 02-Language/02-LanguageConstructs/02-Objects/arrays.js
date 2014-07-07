@@ -15,7 +15,7 @@ for (var i = 0, len = a.length; i < len; i++) {
 }
 
 //for (var i = 0, item; item = a[i++];) {
-//    console.log(a[i]);
+//    console.log(item);
 //}
 
 a.sort();
