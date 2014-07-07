@@ -12,14 +12,14 @@
     var button = document.getElementById("test_button");
 
     // DOM Level 0 event handling
-    button.onclick = showTab;
+//    button.onclick = showTab;
 
     // DOM Level 2 event handling
-//    if (window.attachEvent) {
-//        button.attachEvent("onclick", showTab);
-//    } else {
-//        button.addEventListener("click", showTab);
-//    }
+    if (window.attachEvent) {
+        button.attachEvent("onclick", showTab);
+    } else {
+        button.addEventListener("click", showTab);
+    }
 
     function showTab(e)
     {
