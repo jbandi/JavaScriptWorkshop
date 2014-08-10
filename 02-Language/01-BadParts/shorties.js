@@ -21,3 +21,8 @@ Math.min() < Math.max()
 
 var ar = ['i', 'j', 'k'];
 for(v in ar){ console.log(tt) };
+
+
+print = function(v){console.log(v); return v;};
+['10', '10', '10'].map(print);
+['10', '10', '10'].map(parseInt);	
