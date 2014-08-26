@@ -6,7 +6,7 @@ myApp.controller('MyCtrl', ['$scope', function($scope) {
     $scope.products =  [
         {
             name: "Vacuum Cleaner",
-            price: 121.95,
+            price: 111.95,
             description: "It really sucks!",
             notAvailable: false,
             inStock: true

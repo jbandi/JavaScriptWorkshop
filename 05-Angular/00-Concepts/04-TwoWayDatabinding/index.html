@@ -8,8 +8,8 @@
 </head>
 <body ng-app="myApp" ng-controller="MyCtrl" ng-cloak>
 
-    <div>Quantity: <input type="text" ng-model="item.quantity"/></div>
-    <div>Price: <input type="text" ng-model="item.price"/></div>
+    <div>Quantity: <input type="number" ng-model="item.quantity"/></div>
+    <div>Price: <input type="number" ng-model="item.price"/></div>
     <div>Total Amount: {{item.getAmount()}}</div>
 
     <br/>
