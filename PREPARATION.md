@@ -28,7 +28,7 @@ v0.10.29
 
 The following npm packages should be installed globally:
 ```
-npm install -g grunt-cli bower yeoman http-server
+npm install -g grunt-cli bower yo http-server
 ```
 
 
